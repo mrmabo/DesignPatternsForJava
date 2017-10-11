@@ -7,14 +7,20 @@ public class ContreteAggregate extends Aggregate {
 
     private List<Object> items = new ArrayList<>();
 
-    private int count;
-    private Object o;
-
-
     @Override
     public Iterator CreateIterator() {
         return new ContreteIterator(this);
     }
 
+    public int getCount() {
+        return items.size();
+    }
 
+    public Object getItem(int index){
+        return items.get(index);
+    }
+
+    public void setItem(int index, Object item){
+        items.add(index, item);
+    }
 }
